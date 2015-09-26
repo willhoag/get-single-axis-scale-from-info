@@ -1,0 +1,57 @@
+{
+  "name": "get-single-axis-scale-from-info",
+  "description": "Calculate the size and position of scaling on a single axis from anywhere on that axis. This works for any system that calculates from the top or left, like the browser dom!",
+  "version": "1.0.0",
+  "author": {
+    "name": "Will Hoag",
+    "email": "dev@willhoag.com",
+    "url": "https://github.com/willhoag"
+  },
+  "bugs": {
+    "url": "https://github.com/willhoag/get-single-axis-scale-from-info/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.0",
+    "phantomjs": "^1.9.17",
+    "standard": "*",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.1",
+    "tape-run": "^1.0.0",
+    "watchify": "^3.4.0"
+  },
+  "homepage": "git://github.com/willhoag/get-single-axis-scale-from-info.git",
+  "keywords": [
+    "scale",
+    "from",
+    "top",
+    "left",
+    "zoom",
+    "info",
+    "calculation",
+    "calculate"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "devhoag",
+      "email": "dev@willhoag.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/willhoag/get-single-axis-scale-from-info.git"
+  },
+  "scripts": {
+    "build:browser": "browserify -t babelify --standalone getSingleAxisScaleFromInfo index.es6 --extension .es6 > browser.js",
+    "build:node": "babel index.es6 > index.js",
+    "build": "npm run build:node && npm run build:browser",
+    "prepublish": "npm test && npm run build:node",
+    "lint": "standard **/*.es6",
+    "test": "npm run lint && browserify -t babelify --extension .es6 test.es6 | tape-run | tap-spec",
+    "test:watch": "watchify -t babelify --extension .es6 test.es6 -o | tape-run | tap-spec"
+  }
+}
