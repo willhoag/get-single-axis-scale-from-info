@@ -2,7 +2,6 @@ import getSingleAxisScaleFromInfo from './index.es6'
 import tape from 'tape'
 
 tape('should return the correct values', function (assert, done) {
-
   assert.deepEqual(getSingleAxisScaleFromInfo({
     from: 0,
     scale: 10,

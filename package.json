@@ -1,7 +1,7 @@
 {
   "name": "get-single-axis-scale-from-info",
   "description": "Calculate the size and position of scaling on a single axis from anywhere on that axis. This works for any system that calculates from the top or left, like the browser dom!",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Will Hoag",
     "email": "dev@willhoag.com",
